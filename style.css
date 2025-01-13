@@ -1,0 +1,121 @@
+@font-face {
+font-family: 'fontin';
+src: url('Fontin-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dev-by {
+    color: #b77b23;
+    text-align: center;
+    margin-top: 15px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(10, 10, 10, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    text-transform: uppercase;
+}
+.popup-container {
+    width: 100%;
+    padding: 20px;
+}
+#savedUrlsContainer {
+    margin: 20px;
+}
+
+.url-item {
+    display: flex;           
+    align-items: center;     
+    margin-bottom: 10px; 
+    justify-content: space-between;    
+}
+
+.url-input {
+    width: 250px;              
+    margin-right: 10px;         
+    padding: 5px;               
+    border: 1px solid #ccc;     
+    border-radius: 4px;
+}
+
+.url-item a {
+    margin-right: 10px;        
+    color: #b77b23 ;   
+    background-color: #0f304d;             
+    text-decoration: none; 
+    font-family: 'fontin';
+    padding: 10px;
+}
+
+.trade2-website{
+    color: #b77b23;
+    text-decoration: none;
+    background-color: #0f304d;
+    border: 1px solid #4c4c7d !important;
+    padding: 10px;
+    display: block;
+    margin-bottom: 25px;
+    font-family: 'fontin';
+}
+.trade2-website:hover {
+    background-color: #133d62 !important;
+}
+.top-popup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.popup-container h2 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'fontin';
+}
+
+.url-description{
+    color: white;
+}
+.edit-button{
+    margin-right: 15px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+}
+.edit-button i{
+    font-size: 22px;
+    color: rgb(21, 112, 173);
+}
+.delete-button{
+    margin-right: 15px;
+    background-color: transparent;
+    border: none;
+}
+.delete-button i{
+    font-size: 22px;
+    color: red;
+}
+
+.save-button{
+    margin-right: 15px;
+    background-color: transparent;
+    border: none;
+}
+.save-button i{
+    font-size: 22px;
+    color: green;
+}
+.url-description{
+    width: 200px;
+    overflow-wrap: anywhere;
+}
