@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 urlInput.style.display = 'none';
 
                 const urlDescription = document.createElement('p');
-                urlDescription.textContent = description || 'Ajouter une description';
+                urlDescription.textContent = description || 'Edit to add a description';
                 urlDescription.classList.add('url-description');
                 urlDescription.style.marginRight = '10px';
 
                 const urlLink = document.createElement('a');
                 urlLink.href = url;
                 urlLink.target = '_blank';
-                urlLink.textContent = 'Link';
+                urlLink.textContent = 'Filter link';
 
                 urlDetails.appendChild(urlDescription);
                 urlDetails.appendChild(urlInput);
@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 saveButton.addEventListener('click', () => {
                     const newDescription = urlInput.value;
-                    if (newDescription !== description) {
+                    
                         const updatedUrls = urls.map((entry) =>
                             entry.id === id ? { ...entry, description: newDescription } : entry
                         );
                         chrome.storage.sync.set({ savedUrls: updatedUrls }, () => {
                             displayUrls(updatedUrls); 
                         });
-                    }
+                    
                 });
 
                 urlLabel.appendChild(urlDetails);

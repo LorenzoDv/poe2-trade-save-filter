@@ -23,7 +23,12 @@ waitForElements('.controls-center', (elements) => {
       const saveButton = document.createElement('button');
 
       btnSearch.addEventListener('click', function () {
-        saveButton.remove();
+        
+        setTimeout(() => {
+          const buttons = targetDiv.querySelectorAll('#save-filter-btn');
+          buttons.forEach(button => button.remove());
+        }, 10);
+
         saveButton.textContent = 'Save Filter';
         saveButton.id = 'save-filter-btn';
         saveButton.style.backgroundColor = '#357938';
@@ -77,9 +82,7 @@ waitForElements('.controls-center', (elements) => {
               const savedUrls = data.savedUrls || [];
               savedUrls.push({ id: urlId, url: urlPathForSave });
         
-              chrome.storage.sync.set({ savedUrls: savedUrls }, () => {
-                console.log('URL sauvegardée avec ID:', urlId);
-              });
+              chrome.storage.sync.set({ savedUrls: savedUrls }, () => { });
               alert("Filter saved. Click on the extension to view the filter.");
             });
           });
@@ -117,7 +120,9 @@ waitForElements('.controls-center', (elements) => {
       for (let mutation of mutationsList) {
         const saveButton = document.getElementById('save-filter-btn');
         const btnSearch = document.querySelector('.search-btn');
+
         saveButton.remove();
+
         btnSearch.addEventListener('click', function () {
 
           saveButton.textContent = 'Save Filter';
@@ -130,7 +135,7 @@ waitForElements('.controls-center', (elements) => {
 
           const divControlsCenter = document.querySelector('.controls-center');
           
-          
+          divControlsCenter.appendChild(saveButton);
 
           setTimeout(() => {
             if(!divControlsCenter.querySelector('#save-filter-btn')){
@@ -138,7 +143,7 @@ waitForElements('.controls-center', (elements) => {
             }else{
               console.log('Save button already exists');
             }
-          }, 500);
+          }, 1000);
         });
       }
   });

@@ -1,6 +1,6 @@
 @font-face {
 font-family: 'fontin';
-src: url('Fontin-Regular.ttf') format('truetype');
+src: url('assets/font/Fontin-Regular.ttf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .url-input {
-    width: 250px;              
+    width: 150px;              
     margin-right: 10px;         
     padding: 5px;               
     border: 1px solid #ccc;     
@@ -55,6 +55,10 @@ body {
     text-decoration: none; 
     font-family: 'fontin';
     padding: 10px;
+    border: 1px solid #4c4c7d !important;
+}
+.url-item a:hover {
+    background-color: #133d62 !important;
 }
 
 .trade2-website{
@@ -91,31 +95,59 @@ body {
     margin-left: 15px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .edit-button i{
     font-size: 22px;
     color: rgb(21, 112, 173);
 }
+
 .delete-button{
     margin-right: 15px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .delete-button i{
     font-size: 22px;
-    color: red;
+    color: #a53a3a;
 }
-
+.url-buttons{
+    display: flex;
+}
 .save-button{
     margin-right: 15px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .save-button i{
     font-size: 22px;
     color: green;
 }
 .url-description{
-    width: 200px;
+    width: 100px;
     overflow-wrap: anywhere;
 }
+
+.github{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .github:hover img{
+    background-color: white;
+    border-radius: 100%;
+    transition: 0.2s all linear;
+  }
+  .github img{
+    width: 30px;
+    height: 30px;
+    transition: 0.2s all linear;
+  }
+  .disclaimer{
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    font-family: 'fontin';
+  }
