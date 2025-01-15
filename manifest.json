@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "POE2 - Save Trade Filter",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Save Filter for Path of Exile 2",
     "content_scripts": [
       {
