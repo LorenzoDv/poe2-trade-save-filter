@@ -13,7 +13,7 @@ Have fun and happy trading!
 
 If you don't see the button, refresh the page.
 
-The link to download the extension : <a href="https://chromewebstore.google.com/detail/poe2-save-trade-filter/nbnbkdemllokmclnniijkediimebjgho?authuser=0&hl=fr">
+The link to download the extension : <a href="https://chromewebstore.google.com/detail/poe2-save-trade-filter/nbnbkdemllokmclnniijkediimebjgho?authuser=0&hl=fr">Link</a>
 
 <img src="https://github.com/LorenzoDv/poe2-trade-save-filter/blob/main/assets/img/savefilter1.png"> <br/><br/>
 <img src="https://github.com/LorenzoDv/poe2-trade-save-filter/blob/main/assets/img/savefilter2.png"> <br/><br/>
