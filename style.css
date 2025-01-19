@@ -151,3 +151,13 @@ body {
     text-align: center;
     font-family: 'fontin';
   }
+
+#paypal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#paypal a {
+    margin: 5px !important;
+}
