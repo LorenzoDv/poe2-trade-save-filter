@@ -9,7 +9,6 @@ function waitForElements(selector, callback, timeout = 10000) {
     }
     if (Date.now() - startTime > timeout) {
       clearInterval(interval);
-      console.error(`Timeout: Élément(s) "${selector}" introuvable(s).`);
     }
   }, 100);
 }
@@ -43,7 +42,6 @@ waitForElements('.controls-center', (elements) => {
       });
       saveButton.addEventListener('click', function () {
         const urlPath = window.location.href;
-        console.log(urlPath);
       });
 
       btnClear.addEventListener('click', function () {
@@ -53,9 +51,7 @@ waitForElements('.controls-center', (elements) => {
     const interval = setInterval(() => {
       const urlPath = window.location.href;
       const regex = /\/Standard\/(.+)/;
-      console.log(urlPath)
       if (regex.test(urlPath)) {
-        console.log('regex')
         if (!targetDiv.querySelector('#save-filter-btn')) {
           const btnClear = document.querySelector('.clear-btn');
           const saveButton = document.createElement('button');
@@ -97,7 +93,6 @@ waitForElements('.controls-center', (elements) => {
          
           btnClear.addEventListener('click', function () {
             saveButton.remove();
-            console.log('Cleared');
           });
           
         }
@@ -141,7 +136,6 @@ waitForElements('.controls-center', (elements) => {
           }
 
           setTimeout(() => {
-            console.log('test')
               divControlsCenter.appendChild(saveButton);
           }, 2000);
         });
