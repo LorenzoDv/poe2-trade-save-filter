@@ -24,11 +24,6 @@ waitForElements('.controls-center', (elements) => {
 
       btnSearch.addEventListener('click', function () {
         
-        setTimeout(() => {
-          const buttons = targetDiv.querySelectorAll('#save-filter-btn');
-          buttons.forEach(button => button.remove());
-        }, 10);
-
         saveButton.textContent = 'Save Filter';
         saveButton.id = 'save-filter-btn';
         saveButton.style.backgroundColor = '#357938';
@@ -36,6 +31,7 @@ waitForElements('.controls-center', (elements) => {
         saveButton.style.border = 'none';
         saveButton.style.cursor = 'pointer';
         saveButton.style.marginLeft = '10px';
+        saveButton.style.fontSize = '13px'
 
         saveButton.addEventListener('mouseenter', function () {
           saveButton.style.backgroundColor = '#329b37';
@@ -44,9 +40,6 @@ waitForElements('.controls-center', (elements) => {
         saveButton.addEventListener('mouseleave', function () {
           saveButton.style.backgroundColor = '#357938';
         });
-        if(!targetDiv.querySelector('#save-filter-btn')){
-          targetDiv.appendChild(saveButton);
-        }
       });
       saveButton.addEventListener('click', function () {
         const urlPath = window.location.href;
@@ -58,10 +51,11 @@ waitForElements('.controls-center', (elements) => {
       });
     }
     const interval = setInterval(() => {
-      const urlPath = window.location.pathname;
+      const urlPath = window.location.href;
       const regex = /\/Standard\/(.+)/;
-
+      console.log(urlPath)
       if (regex.test(urlPath)) {
+        console.log('regex')
         if (!targetDiv.querySelector('#save-filter-btn')) {
           const btnClear = document.querySelector('.clear-btn');
           const saveButton = document.createElement('button');
@@ -73,6 +67,7 @@ waitForElements('.controls-center', (elements) => {
           saveButton.style.border = 'none';
           saveButton.style.cursor = 'pointer';
           saveButton.style.marginLeft = '10px';
+          saveButton.style.fontSize = '13px'
 
           saveButton.addEventListener('click', function () {
             const urlPathForSave = window.location.href;
@@ -108,23 +103,27 @@ waitForElements('.controls-center', (elements) => {
         }
         clearInterval(interval);
       } else {
-        console.log("Rien après /Standard !");
         clearInterval(interval);
       }
-    }, 1000);
+    }, 4000);
   });
 
   const targetNode = document.querySelector('.search-bar.search-advanced');
+
   
   const observer = new MutationObserver((mutationsList, observer) => {
       for (let mutation of mutationsList) {
         const saveButton = document.getElementById('save-filter-btn');
         const btnSearch = document.querySelector('.search-btn');
 
-        saveButton.remove();
+        const divControlsCenter = document.querySelector('.controls-center');
 
+        if(divControlsCenter.querySelector('#save-filter-btn')){
+          saveButton.remove();
+        }
+        
         btnSearch.addEventListener('click', function () {
-
+          
           saveButton.textContent = 'Save Filter';
           saveButton.id = 'save-filter-btn';
           saveButton.style.backgroundColor = '#357938';
@@ -132,18 +131,19 @@ waitForElements('.controls-center', (elements) => {
           saveButton.style.border = 'none';
           saveButton.style.cursor = 'pointer';
           saveButton.style.marginLeft = '10px';
+          saveButton.style.fontSize = '13px'
 
-          const divControlsCenter = document.querySelector('.controls-center');
-          
-          divControlsCenter.appendChild(saveButton);
+      
+          if(divControlsCenter.querySelector('#save-filter-btn')){
+            saveButton.remove();
+          }else{
+            divControlsCenter.appendChild(saveButton);
+          }
 
           setTimeout(() => {
-            if(!divControlsCenter.querySelector('#save-filter-btn')){
+            console.log('test')
               divControlsCenter.appendChild(saveButton);
-            }else{
-              console.log('Save button already exists');
-            }
-          }, 1000);
+          }, 2000);
         });
       }
   });
