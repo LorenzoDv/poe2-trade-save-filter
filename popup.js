@@ -58,8 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 saveButton.style.display = 'none';
 
                 urlButtons.appendChild(editButton);
-                urlButtons.appendChild(deleteButton);
                 urlButtons.appendChild(saveButton);
+                urlButtons.appendChild(deleteButton);
+                
 
                 editButton.addEventListener('click', () => {
                     urlDescription.style.display = 'none';

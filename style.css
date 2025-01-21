@@ -30,7 +30,8 @@ body {
     padding: 20px;
 }
 #savedUrlsContainer {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .url-item {
@@ -38,6 +39,8 @@ body {
     align-items: center;     
     margin-bottom: 10px; 
     justify-content: space-between;    
+    background-color: rgba(0, 0, 0, .5);
+    padding: 5px 15px;
 }
 
 .url-input {
@@ -49,16 +52,16 @@ body {
 }
 
 .url-item a {
-    margin-right: 10px;        
-    color: #b77b23 ;   
-    background-color: #0f304d;             
-    text-decoration: none; 
+    margin-right: 10px;
+    color: white;
+    background-color: #5a3806;
+    text-decoration: none;
     font-family: 'fontin';
     padding: 10px;
-    border: 1px solid #4c4c7d !important;
+    border: 1px solid #8a5609 !important;
 }
 .url-item a:hover {
-    background-color: #133d62 !important;
+    background-color: #724708 !important;
 }
 
 .trade2-website{
@@ -85,6 +88,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     font-family: 'fontin';
+    font-weight: 200;
 }
 
 .url-description{
@@ -160,4 +164,9 @@ body {
 
 #paypal a {
     margin: 5px !important;
+}
+hr{
+    border: none;
+    height: 1px;
+    background-color: #465260;
 }
