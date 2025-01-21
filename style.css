@@ -103,7 +103,7 @@ body {
 }
 .edit-button i{
     font-size: 22px;
-    color: rgb(21, 112, 173);
+    color: rgb(75 110 133);
 }
 
 .delete-button{
@@ -114,7 +114,7 @@ body {
 }
 .delete-button i{
     font-size: 22px;
-    color: #a53a3a;
+    color: #7d2626;
 }
 .url-buttons{
     display: flex;
@@ -127,7 +127,7 @@ body {
 }
 .save-button i{
     font-size: 22px;
-    color: green;
+    color: #1f5b1f;
 }
 .url-description{
     width: 100px;
